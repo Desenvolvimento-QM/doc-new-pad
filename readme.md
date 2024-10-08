@@ -66,19 +66,19 @@ Estas classes fornecem métodos para gerenciamento de usuários, papéis e recur
 ### `AdvScript_Context_Users`
 Classe para gerenciamento de usuários.
 - **Métodos**:
-  - `get(username: string)`: Retorna informações de um usuário pelo `username`.
-  - `list(params: [iTableReadParams](./interfaces.md#itableReadParams))`: Lista usuários com base nos parâmetros fornecidos.
-  - `create(user: CreateUserDto)`: Cria um novo usuário. [Ver detalhes de `CreateUserDto`](./interfaces.md#createuserdto).
-  - `update(user: Partial<UpdateUserDto>)`: Atualiza informações de um usuário. [Ver detalhes de `UpdateUserDto`](./interfaces.md#updateuserdto).
-  - `delete(username: string)`: Deleta um usuário pelo `username`.
-  - `resetPassword(username: string)`: Reseta a senha de um usuário.
-  - `setRole(username: string, role: iRealmRolesOptions)`: Define o papel do usuário. [Ver detalhes de `iRealmRolesOptions`](./interfaces.md#irealmrolesoptions).
-  - `setResources(username: string, resources: string[])`: Define os recursos de um usuário.
+  - get(username: string): Retorna informações de um usuário pelo `username`.
+  - list(params: [iTableReadParams](./interfaces.md#itableReadParams)): Lista usuários com base nos parâmetros fornecidos.
+  - create(user: [CreateUserDto](./interfaces.md#createuserdto)): Cria um novo usuário.
+  - update(user: Partial<[UpdateUserDto](./interfaces.md#updateuserdto)>): Atualiza informações de um usuário.
+  - delete(username: string): Deleta um usuário pelo `username`.
+  - resetPassword(username: string): Reseta a senha de um usuário.
+  - setRole(username: string, role: [iRealmRolesOptions](./interfaces.md#irealmrolesoptions)): Define o papel do usuário.
+  - setResources(username: string, resources: string[])`: Define os recursos de um usuário.
 
 ### `AdvScript_Context_Roles`
 Classe para listagem de papéis disponíveis.
 - **Métodos**:
-  - `list()`: Retorna a lista de papéis disponíveis. [Ver detalhes de `iRealmRolesOptions`](./interfaces.md#irealmrolesoptions).
+  - `list()`: Retorna a lista de papéis disponíveis. [iRealmRolesOptions](./interfaces.md#irealmrolesoptions).
 
 ### `AdvScript_Context_Resources`
 Classe para gerenciamento de recursos.
