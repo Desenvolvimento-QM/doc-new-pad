@@ -60,6 +60,32 @@ Retorna a fonte de dados especificada pelo nome.
 Retorna o valor de um parâmetro de URL especificado pelo nome.
 - Exemplo de uso: `ctx.getUrlParam("meuParametro")`
 
+## Classes Utilitárias
+Estas classes fornecem métodos para gerenciamento de usuários, papéis e recursos.
+
+### `AdvScript_Context_Users`
+Classe para gerenciamento de usuários.
+- **Métodos**:
+  - `get(username: string)`: Retorna informações de um usuário pelo `username`.
+  - `list(params: iTableReadParams)`: Lista usuários com base nos parâmetros fornecidos. [Ver detalhes de `iTableReadParams`](./interfaces.md#itableReadParams).
+  - `create(user: CreateUserDto)`: Cria um novo usuário. [Ver detalhes de `CreateUserDto`](./interfaces.md#createuserdto).
+  - `update(user: Partial<UpdateUserDto>)`: Atualiza informações de um usuário. [Ver detalhes de `UpdateUserDto`](./interfaces.md#updateuserdto).
+  - `delete(username: string)`: Deleta um usuário pelo `username`.
+  - `resetPassword(username: string)`: Reseta a senha de um usuário.
+  - `setRole(username: string, role: iRealmRolesOptions)`: Define o papel do usuário. [Ver detalhes de `iRealmRolesOptions`](./interfaces.md#irealmrolesoptions).
+  - `setResources(username: string, resources: string[])`: Define os recursos de um usuário.
+
+### `AdvScript_Context_Roles`
+Classe para listagem de papéis disponíveis.
+- **Métodos**:
+  - `list()`: Retorna a lista de papéis disponíveis. [Ver detalhes de `iRealmRolesOptions`](./interfaces.md#irealmrolesoptions).
+
+### `AdvScript_Context_Resources`
+Classe para gerenciamento de recursos.
+- **Métodos**:
+  - `getResources()`: Retorna todos os recursos disponíveis.
+
+
 ## Exemplo de Código
 Os exemplos estão disponíveis em arquivos separados na pasta `exemplos/`:
 
