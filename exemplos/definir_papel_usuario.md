@@ -5,7 +5,7 @@ Este exemplo demonstra como definir um papel para um usuário específico utiliz
 
 ```javascript
 async function Main(ctx, event_data) {
-    const usersContext = ctx.users; // Acessando o contexto de usuários
+    const usersContext = ctx.user; // Acessando o contexto de usuários
     const rolesContext = ctx.roles; // Acessando o contexto de papéis
 
     // Verificando os papéis disponíveis após a alteração
