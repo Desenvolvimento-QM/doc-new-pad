@@ -60,89 +60,15 @@ Retorna a fonte de dados especificada pelo nome.
 Retorna o valor de um parâmetro de URL especificado pelo nome.
 - Exemplo de uso: `ctx.getUrlParam("meuParametro")`
 
-## Classes Utilitárias
-Estas classes fornecem métodos para gerenciamento de usuários, papéis e recursos.
-
-### `AdvScript_Context_Users`
-Classe para gerenciamento de usuários.
-- **Métodos**:
-  - `get(username: string)`: Retorna informações de um usuário pelo `username`.
-  - `list(params: iTableReadParams)`: Lista usuários com base nos parâmetros fornecidos. [Ver detalhes de `iTableReadParams`](./interfaces.md#itableReadParams).
-  - `create(user: CreateUserDto)`: Cria um novo usuário. [Ver detalhes de `CreateUserDto`](./interfaces.md#createuserdto).
-  - `update(user: Partial<UpdateUserDto>)`: Atualiza informações de um usuário. [Ver detalhes de `UpdateUserDto`](./interfaces.md#updateuserdto).
-  - `delete(username: string)`: Deleta um usuário pelo `username`.
-  - `resetPassword(username: string)`: Reseta a senha de um usuário.
-  - `setRole(username: string, role: iRealmRolesOptions)`: Define o papel do usuário. [Ver detalhes de `iRealmRolesOptions`](./interfaces.md#irealmrolesoptions).
-  - `setResources(username: string, resources: string[])`: Define os recursos de um usuário.
-
-### `AdvScript_Context_Roles`
-Classe para listagem de papéis disponíveis.
-- **Métodos**:
-  - `list()`: Retorna a lista de papéis disponíveis. [Ver detalhes de `iRealmRolesOptions`](./interfaces.md#irealmrolesoptions).
-
-### `AdvScript_Context_Resources`
-Classe para gerenciamento de recursos.
-- **Métodos**:
-  - `getResources()`: Retorna todos os recursos disponíveis.
-
 ## Exemplo de Código
-Abaixo estão exemplos detalhados de como utilizar as variáveis de contexto, funções e classes dentro de um snippet:
+Os exemplos estão disponíveis em arquivos separados na pasta `exemplos/`:
 
-### Exemplo 1: Gerenciamento de Usuários
-```javascript
-async function manageUser(ctx) {
-    const usersContext = new AdvScript_Context_Users();
+- [Exemplo de Utilização Básica](./exemplos/exemplo_utilizacao_basica.md): Demonstra como utilizar as variáveis de contexto e funções básicas.
+- [Gerenciamento de Usuários](./exemplos/gerenciamento_usuarios.md): Exemplo detalhado de criação, listagem, atualização e exclusão de usuários.
+- [Listagem de Papéis](./exemplos/listagem_papeis.md): Exemplo de como listar os papéis disponíveis no contexto.
+- [Gerenciamento de Recursos](./exemplos/gerenciamento_recursos.md): Exemplo de como acessar e listar recursos.
 
-    // Criando um novo usuário
-    const newUser = {
-        username: "johndoe",
-        enabled: true,
-        emailVerified: true,
-        updatePassword: false,
-        firstName: "John",
-        lastName: "Doe",
-        email: "johndoe@example.com",
-        locale: "en",
-        default_role: "contributor"
-    };
-    await usersContext.create(newUser);
-
-    // Listando usuários
-    const userList = await usersContext.list({ search: "john" });
-    console.log("Usuários encontrados:", userList);
-
-    // Atualizando um usuário
-    await usersContext.update({ id: userList[0].id, email: "john.new@example.com" });
-
-    // Resetando senha de um usuário
-    await usersContext.resetPassword("johndoe");
-
-    // Deletando um usuário
-    await usersContext.delete("johndoe");
-}
-```
-
-### Exemplo 2: Listagem de Papéis
-```javascript
-async function listRoles(ctx) {
-    const rolesContext = new AdvScript_Context_Roles();
-
-    // Listando papéis disponíveis
-    const roles = await rolesContext.list();
-    console.log("Papéis disponíveis:", roles);
-}
-```
-
-### Exemplo 3: Gerenciamento de Recursos
-```javascript
-async function manageResources(ctx) {
-    const resourcesContext = new AdvScript_Context_Resources();
-
-    // Obtendo todos os recursos disponíveis
-    const resources = await resourcesContext.getResources();
-    console.log("Recursos disponíveis:", resources);
-}
-```
+Para mais detalhes sobre as interfaces, consulte [interfaces.md](./interfaces.md).
 
 ## Considerações Finais
 Esta ferramenta oferece uma maneira flexível e poderosa de personalizar o comportamento do seu aplicativo em tempo de execução.
