@@ -93,6 +93,8 @@ Os exemplos estão disponíveis em arquivos separados na pasta `exemplos/`:
 - [Gerenciamento de Usuários](./exemplos/gerenciamento_usuarios.md): Exemplo detalhado de criação, listagem, atualização e exclusão de usuários.
 - [Listagem de Papéis](./exemplos/listagem_papeis.md): Exemplo de como listar os papéis disponíveis no contexto.
 - [Gerenciamento de Recursos](./exemplos/gerenciamento_recursos.md): Exemplo de como acessar e listar recursos.
+- [Definir Papel de um Usuário](./exemplos/definir_papel_usuario.md): Exemplo de como definir um papel para um usuário.
+- [Definir Recursos de um Usuário](./exemplos/definir_recursos_usuario.md): Exemplo de como definir recursos para um usuário.
 
 Para mais detalhes sobre as interfaces, consulte [interfaces.md](./interfaces.md).
 
