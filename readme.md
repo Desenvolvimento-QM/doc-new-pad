@@ -67,7 +67,7 @@ Estas classes fornecem métodos para gerenciamento de usuários, papéis e recur
 Classe para gerenciamento de usuários.
 - **Métodos**:
   - `get(username: string)`: Retorna informações de um usuário pelo `username`.
-  - `list(params: iTableReadParams)`: Lista usuários com base nos parâmetros fornecidos. [Ver detalhes de `iTableReadParams`](./interfaces.md#itableReadParams).
+  - `list(params: [iTableReadParams](./interfaces.md#itableReadParams))`: Lista usuários com base nos parâmetros fornecidos.
   - `create(user: CreateUserDto)`: Cria um novo usuário. [Ver detalhes de `CreateUserDto`](./interfaces.md#createuserdto).
   - `update(user: Partial<UpdateUserDto>)`: Atualiza informações de um usuário. [Ver detalhes de `UpdateUserDto`](./interfaces.md#updateuserdto).
   - `delete(username: string)`: Deleta um usuário pelo `username`.
