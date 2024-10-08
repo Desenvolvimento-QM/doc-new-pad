@@ -5,14 +5,13 @@ Neste exemplo, demonstramos como criar, listar, atualizar e deletar usuários ut
 
 ```javascript
 async function Main(ctx, event_data) {
-    const usersContext = ctx.users; // Acessando o contexto de usuários
-
+    const usersContext = ctx.user; // Acessando o contexto de usuários
+    const username = "johndoe-2024";
     // Criando um novo usuário
     const newUser = {
-        username: "johndoe",
-        enabled: true,
+        username,
         emailVerified: true,
-        updatePassword: false,
+        enabled: true,
         firstName: "John",
         lastName: "Doe",
         email: "johndoe@example.com",
@@ -22,16 +21,16 @@ async function Main(ctx, event_data) {
     await usersContext.create(newUser);
 
     // Listando usuários
-    const userList = await usersContext.list({ search: "john" });
+    const userList = await usersContext.list({ username });
     console.log("Usuários encontrados:", userList);
 
     // Atualizando um usuário
-    await usersContext.update({ id: userList[0].id, email: "john.new@example.com" });
+    await usersContext.update(username, { email: "john.new@example.com" });
 
     // Resetando senha de um usuário
-    await usersContext.resetPassword("johndoe");
+    await usersContext.resetPassword(username);
 
     // Deletando um usuário
-    await usersContext.delete("johndoe");
+    await usersContext.delete(username);
 }
 ```
